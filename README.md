@@ -42,3 +42,19 @@ This project consists of multiple computational tasks in Python, ranging from bi
     Sieve of Eratosthenes: Efficiently marks non-prime numbers and has a time complexity of O(n log log n).
 
     Trial Division: Checks divisibility against previously found primes, with a higher time complexity of O(n√n).
+
+## Task 5: Roots
+
+    Computed the first 32 bits of the fractional part of the square roots of the first 100 prime numbers. This was achieved by calculating the square root of each prime, extracting the fractional part, and converting it into a 32-bit binary representation. The approach ensures a precise representation of the mathematical property, useful in cryptographic and numerical applications.
+
+## Task 6: Proof of Work
+
+    Identified English words whose SHA256 hash has the highest number of leading zero bits. The word "monkey" was found to have 12 leading zero bits in its SHA256 hash digest:
+
+    Word: monkey
+
+    Leading Zero Bits: 12
+
+    SHA256 Hash: 000c285457fc971f862a79b786476c78812c8897063c6fa9c045f579a3b2d63f
+
+    To ensure that all words processed were valid English words, the NLTK words corpus was used for validation. Each word was checked against a standard dictionary before computing its SHA256 hash.
