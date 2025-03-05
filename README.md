@@ -85,3 +85,66 @@ The machine starts at the left-most non-blank symbol and treats the right-most s
    **Output Tape:** "101000"
 
     The machine processes each bit sequentially, following the transition rules above until the computation is complete.
+
+## Task 8: Bubble Sort Comparisons
+
+This project implements Bubble Sort and tracks the number of comparisons made during the sorting process for all possible permutations of a given list of integers. The goal is to analyze how different input orders affect Bubble Sort’s efficiency in terms of comparisons.
+
+1. **Overview**
+    
+    This project implements Bubble Sort and tracks the number of comparisons made during the sorting process for all possible permutations of a given list of integers. The objective is to analyze how different input orders affect Bubble Sort's efficiency in terms of comparisons.
+
+    By applying Bubble Sort to every possible permutation of a list (e.g., [1, 2, 3, 4, 5]), we can evaluate:
+
+    - Best-case scenario (already sorted list).
+    - Worst-case scenario (completely reversed list).
+    - Average-case performance for randomly ordered inputs.
+    - The results are displayed in a structured table format using Python's built-in print() function.
+
+2. **Bubble Sort Algorithm**
+
+    Bubble Sort is a simple comparison-based sorting algorithm that works as follows:
+
+    - Traverse the list multiple times.
+    - Compare adjacent elements:
+        - If they are in the wrong order, swap them.
+    - Count the number of comparisons made.
+        - If no swaps occur in a pass, the list is already sorted, and the algorithm terminates early (optimization).
+    - Bubble Sort is generally inefficient for large lists due to its O(n²) time complexity, but this project uses it to analyze sorting behavior across different input permutations.
+
+3. **Methodology**
+    
+        Step 1: Generate All Permutations
+
+        A predefined list (e.g., [1, 2, 3, 4, 5]) is used.
+        All possible permutations of the list are generated using Python’s built-in itertools.permutations.
+        This ensures that all possible input orderings are tested.
+        
+        Step 2: Apply Bubble Sort with Comparison Counting
+        
+        A modified version of Bubble Sort is used.
+        The algorithm counts how many times elements are compared before sorting is complete.
+        The sorting process is optimized with an early exit condition (if no swaps occur, sorting stops early).
+        
+        Step 3: Store and Display Results
+        
+        Each permutation and its corresponding comparison count are stored in a list.
+        The results are printed in a structured table format using Python's built-in functions.
+
+4. **Example Output**
+
+    When running the script, the output displays the number of comparisons needed for each permutation of [1, 2, 3, 4, 5].
+
+        Permutation               Comparisons
+        ========================================
+        (1, 2, 3, 4, 5)           10
+        (1, 2, 3, 5, 4)           11
+        (5, 4, 3, 2, 1)           20
+        (3, 1, 4, 5, 2)           14
+        ...
+
+    - Best-case scenario (sorted list) has the fewest comparisons (e.g., 10).
+
+    - Worst-case scenario (reversed list) has the most comparisons (e.g., 20).
+
+    - Other permutations fall between these two extremes.
