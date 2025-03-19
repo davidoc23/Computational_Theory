@@ -1,87 +1,106 @@
 # Computational_Theory
-# Overview
+    Project Overview
 
-This project consists of multiple computational tasks in Python, ranging from bitwise operations to number theory and cryptographic computations. Each task is implemented with an explanation of the methodology used.
+    This project implements various computational tasks related to bitwise operations, hashing, number theory, and computational complexity. The primary focus is on understanding binary representations, hash functions, prime number generation, Turing Machines, and sorting algorithms.
 
-# Tasks
+# Features
 
-## Task 1: Binary Representations
+## 1. Binary Operations
 
-    Implemented functions for bitwise operations on 32-bit unsigned integers:
+    Bitwise Rotation:
 
-    rotl(x, n): Rotates the bits of x left by n positions.
+    rotl(x, n=1): Rotates a 32-bit unsigned integer x to the left by n places.
 
-    rotr(x, n): Rotates the bits of x right by n positions.
+    rotr(x, n=1): Rotates a 32-bit unsigned integer x to the right by n places.
 
-    ch(x, y, z): Chooses bits from y where x is 1 and from z where x is 0.
+    Bitwise Logical Operations:
 
-    maj(x, y, z): Performs a majority vote on each bit position among x, y, and z.
+    ch(x, y, z): Chooses bits from y where x has bits set to 1, and from z where x has bits set to 0.
 
-## Task 2: Hash Functions
+    maj(x, y, z): Returns 1 at each bit position where at least two of x, y, and z have a 1.
 
-    Implemented a hash function inspired by Kernighan & Ritchie’s C hash function:
+## 2. Hash Functions
 
-    The function iterates over the input string, updating the hash using 31 * hashval + ord(char), with a modulo 101 operation.
+    A Python implementation of a hash function inspired by the one from The C Programming Language by Kernighan & Ritchie.
 
-    The choice of 31 and 101 ensures better hash distribution and reduces collisions.
+    Explains why prime numbers (31, 101) are used to reduce hash collisions.
 
-## Task 3: SHA256 Padding
+    Demonstrates hashing for different input strings.
 
-    Implemented a function to compute SHA256 padding for a given file:
+## 3. SHA256 Padding Calculation
 
-    Appends a 1-bit (0x80 in hex) followed by enough 0-bits to align with 512-bit blocks.
+    Implements padding for SHA256 hashing, ensuring messages conform to the 512-bit block requirement.
 
-    Appends the original message length as a 64-bit big-endian integer.
+    Outputs the correct padding in hexadecimal format.
 
-    Outputs the padding in hex format.
+## 4. Prime Number Generation
 
-## Task 4: Prime Numbers
+    Computes the first 1,000 prime numbers using two different algorithms:
 
-    Computed the first 1,000 prime numbers using two algorithms:
+    Sieve of Eratosthenes (optimized for efficiency)
 
-    Sieve of Eratosthenes: Efficiently marks non-prime numbers and has a time complexity of O(n log log n).
+    Trial Division (optimized for correctness)
 
-    Trial Division: Checks divisibility against previously found primes, with a higher time complexity of O(n√n).
+    Compares execution times of both methods.
 
-## Task 5: Roots
+## 5. Fractional Parts of Square Roots
 
-    Computed the first 32 bits of the fractional part of the square roots of the first 100 prime numbers. This was achieved by calculating the square root of each prime, extracting the fractional part, and converting it into a 32-bit binary representation. The approach ensures a precise representation of the mathematical property, useful in cryptographic and numerical applications.
+    Computes the first 32 bits of the fractional part of the square roots of the first 100 prime numbers.
 
-## Task 6: Proof of Work
+    Displays the results in a tabular format.
 
-    Identified English words whose SHA256 hash has the highest number of leading zero bits. The word "monkey" was found to have 12 leading zero bits in its SHA256 hash digest:
+## 6. Proof of Work (SHA256 Hashing of English Words)
 
-    Word: monkey
+    Finds English words with the most leading zero bits in their SHA256 hash.
 
-    Leading Zero Bits: 12
+    Provides proof that the words exist in the English dictionary using NLTK.
 
-    SHA256 Hash: 000c285457fc971f862a79b786476c78812c8897063c6fa9c045f579a3b2d63f
+## 7. Turing Machine Simulation
 
-    To ensure that all words processed were valid English words, the NLTK words corpus was used for validation. Each word was checked against a standard dictionary before computing its SHA256 hash.
+    Implements a Turing Machine that adds 1 to a binary number.
 
-## Task 7 - Turing Machine
-Implemented a Turing Machine that adds 1 to a binary number written on its tape.
+    Simulates the binary increment operation by propagating carries.
 
-The machine starts at the left-most non-blank symbol and treats the right-most symbol as the least significant bit.
+## 8. Computational Complexity (Bubble Sort Permutations)
 
-   ### Methodology:
-    - The machine moves to the right-most digit of the binary number.
-    - It performs addition by flipping "0" to "1" or propagating a carry by changing "1" to "0".
-    - If all bits are "1", a new "1" is inserted at the start.
+    Implements a Bubble Sort algorithm that counts the number of comparisons.
 
-   ### Transition Table:
+    Runs the sorting algorithm on all permutations of [1,2,3,4,5].
 
-    | Current State | Read Symbol | Write Symbol | Move | Next State |
-    |--------------|------------|--------------|------|------------|
-    | "q0"        | "0" or "1"  | "0" or "1"   | "R"  | "q0"       |
-    | "q0"        | "□"         | "□"          | "L"  | "q1"       |
-    | "q1"        | "0"         | "1"          | "S"  | "qhalt"    |
-    | "q1"        | "1"         | "0"          | "L"  | "q1"       |
-    | "q1"        | "□"         | "1"          | "S"  | "qhalt"    |
+    Analyzes the complexity and outputs the comparisons for each permutation.
 
-   ### Example Execution:
-   **Input Tape:** "100111"
+    Why This Project is Useful
 
-   **Output Tape:** "101000"
+    Educational Value: Demonstrates key computer science concepts, including bitwise operations, hashing, number theory, and algorithmic complexity.
 
-    The machine processes each bit sequentially, following the transition rules above until the computation is complete.
+    Cryptographic Relevance: Provides insights into SHA256 padding and bitwise operations used in cryptographic applications.
+
+    Sorting Complexity Analysis: Highlights the performance impact of different sorting algorithms on different input permutations.
+
+# Getting Started
+
+## Prerequisites
+
+    Ensure you have Python 3 installed. You may also need to install the following dependencies:
+
+        pip install nltk
+
+## Running the Project
+
+Each task is implemented as a Python function and can be executed separately.
+
+- Clone the repository:
+
+        git clone https://github.com/davidoc23/Computational_Theory.git
+    
+        cd Computational_Theory
+
+
+## Getting Help
+
+    For any issues, feel free to open an issue on the GitHub repository or contact the project maintainer.
+
+## Maintainers
+
+    This project is maintained by David O Connor. Contributions are welcome!
+
