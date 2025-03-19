@@ -55,29 +55,51 @@
 
     Provides proof that the words exist in the English dictionary using NLTK.
 
-## Task 7 - Turing Machine
-Implemented a Turing Machine that adds 1 to a binary number written on its tape.
+## 7. Turing Machine Simulation
 
-The machine starts at the left-most non-blank symbol and treats the right-most symbol as the least significant bit.
+    Implements a Turing Machine that adds 1 to a binary number.
 
-   ### Methodology:
-    - The machine moves to the right-most digit of the binary number.
-    - It performs addition by flipping "0" to "1" or propagating a carry by changing "1" to "0".
-    - If all bits are "1", a new "1" is inserted at the start.
+    Simulates the binary increment operation by propagating carries.
 
-   ### Transition Table:
+## 8. Computational Complexity (Bubble Sort Permutations)
 
-    | Current State | Read Symbol | Write Symbol | Move | Next State |
-    |--------------|------------|--------------|------|------------|
-    | "q0"        | "0" or "1"  | "0" or "1"   | "R"  | "q0"       |
-    | "q0"        | "□"         | "□"          | "L"  | "q1"       |
-    | "q1"        | "0"         | "1"          | "S"  | "qhalt"    |
-    | "q1"        | "1"         | "0"          | "L"  | "q1"       |
-    | "q1"        | "□"         | "1"          | "S"  | "qhalt"    |
+    Implements a Bubble Sort algorithm that counts the number of comparisons.
 
-   ### Example Execution:
-   **Input Tape:** "100111"
+    Runs the sorting algorithm on all permutations of [1,2,3,4,5].
 
-   **Output Tape:** "101000"
+    Analyzes the complexity and outputs the comparisons for each permutation.
 
-    The machine processes each bit sequentially, following the transition rules above until the computation is complete.
+    Why This Project is Useful
+
+    Educational Value: Demonstrates key computer science concepts, including bitwise operations, hashing, number theory, and algorithmic complexity.
+
+    Cryptographic Relevance: Provides insights into SHA256 padding and bitwise operations used in cryptographic applications.
+
+    Sorting Complexity Analysis: Highlights the performance impact of different sorting algorithms on different input permutations.
+
+# Getting Started
+
+## Prerequisites
+
+    Ensure you have Python 3 installed. You may also need to install the following dependencies:
+
+        pip install nltk
+
+## Running the Project
+
+Each task is implemented as a Python function and can be executed separately.
+
+- Clone the repository:
+
+        git clone https://github.com/davidoc23/Computational_Theory.git
+    
+        cd Computational_Theory
+
+
+## Getting Help
+
+    For any issues, feel free to open an issue on the GitHub repository or contact the project maintainer.
+
+## Maintainers
+
+    This project is maintained by David O Connor. Contributions are welcome!
