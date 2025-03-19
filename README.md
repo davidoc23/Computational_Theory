@@ -69,13 +69,13 @@
 
     Analyzes the complexity and outputs the comparisons for each permutation.
 
-    Why This Project is Useful
+## Why This Project is Useful
 
-    Educational Value: Demonstrates key computer science concepts, including bitwise operations, hashing, number theory, and algorithmic complexity.
+- Educational Value: Demonstrates key computer science concepts, including bitwise operations, hashing, number theory, and algorithmic complexity.
 
-    Cryptographic Relevance: Provides insights into SHA256 padding and bitwise operations used in cryptographic applications.
+- Cryptographic Relevance: Provides insights into SHA256 padding and bitwise operations used in cryptographic applications.
 
-    Sorting Complexity Analysis: Highlights the performance impact of different sorting algorithms on different input permutations.
+- Sorting Complexity Analysis: Highlights the performance impact of different sorting algorithms on different input permutations.
 
 # Getting Started
 
