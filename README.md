@@ -1,7 +1,7 @@
 # Computational_Theory
-    Project Overview
+## Project Overview
 
-    This project implements various computational tasks related to bitwise operations, hashing, number theory, and computational complexity. The primary focus is on understanding binary representations, hash functions, prime number generation, Turing Machines, and sorting algorithms.
+- This project implements various computational tasks related to bitwise operations, hashing, number theory, and computational complexity. The primary focus is on understanding binary representations, hash functions, prime number generation, Turing Machines, and sorting algorithms.
 
 # Features
 
